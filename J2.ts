@@ -61,6 +61,55 @@ function sumOfPossibleGamesId(text: string): number {
 
     return idSum;
 }
+// Part 2
+function fewestDices(text: string): number {
+    let powerSum = 0;
+
+    const games: string[] = text.split('\n')
+    
+    games.pop()
+
+    games.map((game) => {
+        const sets = game.split(':')[1].split(';')
+        let maxRed = 0, maxGreen = 0, maxBlue = 0;
+
+        sets.map((set) => {
+            set.split(',').map((elem) => {
+                if (elem.charAt(0) === ' ') {
+                    elem = elem.substring(1);
+                }
+
+                const elemTab = elem.split(' ');
+                const quantity = parseInt(elemTab[0]);
+                const type = elemTab[1];
+
+                switch (type) {
+                    case 'red':
+                        if (quantity > maxRed) {
+                            maxRed = quantity;
+                        }
+                        break;
+                    case 'green':
+                        if (quantity > maxGreen) {
+                            maxGreen = quantity;
+                        }
+                        break;
+                    case 'blue':
+                        if (quantity > maxBlue) {
+                            maxBlue = quantity;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            })
+        })
+
+        powerSum += (maxRed * maxGreen * maxBlue);
+    })
+
+    return powerSum;
+}
 
 
 
@@ -72,10 +121,12 @@ const txtTest3 = 'Game 31: 7 blue; 2 green, 6 blue; 1 red, 9 blue, 5 green\n';
 // console.log(`Test 1: ${sumOfPossibleGamesId(txtTest1)} should be equal to 8`)
 // console.log(`Test 2: ${sumOfPossibleGamesId(txtTest2)} should be equal to 0`)
 // console.log(`Test 3: ${sumOfPossibleGamesId(txtTest3)} should be equal to 31`)
+// console.log(`Test 4: ${fewestDices(txtTest1)} should be equal to 2286`)
 
 
 
 // Prod
-const txtProd1 = readInput('inputs/day2.txt')
-// console.log(`\nProd 1: ${sumOfPossibleGamesId(txtProd1)}`)
+const txtProd = readInput('inputs/day2.txt')
+// console.log(`\nProd 1: ${sumOfPossibleGamesId(txtProd)}`)
+// console.log(`\nProd 2: ${fewestDices(txtProd)}`)
 
