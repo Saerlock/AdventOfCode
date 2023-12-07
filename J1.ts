@@ -127,5 +127,5 @@ const txt6 = "sevenine\n";
 
 // Prod
 const txtProd = readInput('inputs/day1.txt');
-console.log(`\nProd 1: ${getNumber(txtProd)}`);
-console.log(`Prod 2: ${getNumberFormated(txtProd)}`);
+// console.log(`\nProd 1: ${getNumber(txtProd)}`);
+// console.log(`Prod 2: ${getNumberFormated(txtProd)}`);
