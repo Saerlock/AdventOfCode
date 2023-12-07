@@ -1,10 +1,7 @@
-const { readFileSync } = require('fs');
+import { readFileSync } from 'fs';
 
 const readInput = (fileName) => {
-	return readFileSync(fileName, "utf8", (err, data) => {
-		if (err) throw err;
-		return data.toString();
-	});
+	return readFileSync(fileName, "utf8");
 };
 
 
