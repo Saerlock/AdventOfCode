@@ -164,10 +164,10 @@ function gearRatios(text: string) : number {
 
 
 // Tests
-let start = Date.now();
-
 const txtTest: string = '467..114..\n...*......\n..35..633.\n......#...\n617*..1...\n.....+.58.\n..592.....\n......755.\n...$.*....\n.664.598..\n'
 // console.log(txtTest1);
+
+let start = Date.now();
 
 console.log(`Test 1: ${sumAjdacents(txtTest)} should be equal to 4362`)
 console.log(`Tests (part 1) took ${(Date.now() - start)}ms\n`)
