@@ -165,7 +165,6 @@ function gearRatios(text: string) : number {
 
 // Tests
 const txtTest: string = '467..114..\n...*......\n..35..633.\n......#...\n617*..1...\n.....+.58.\n..592.....\n......755.\n...$.*....\n.664.598..\n'
-// console.log(txtTest1);
 
 let start = Date.now();
 

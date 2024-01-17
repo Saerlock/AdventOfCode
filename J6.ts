@@ -60,8 +60,6 @@ function waysToWinOne(input: string) : number {
 
 // Tests
 const txtTest: string = 'Time:      7  15   30\nDistance:  9  40  200\n';
-// console.log(txtTest);
-// waysToWinOne(txtTest);
 let start: number;
 
 start = Date.now();
