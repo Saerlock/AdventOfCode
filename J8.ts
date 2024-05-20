@@ -24,7 +24,6 @@ const endWithZ = /Z$/;
 // Functions
 function findLCM(a : number, b : number) {
     let large = Math.max(a, b), small = Math.min(a, b);
-
     for (let i = large; ; i += large) {
         if (i % small === 0)
             return i;
@@ -36,9 +35,7 @@ function findLCM(a : number, b : number) {
 // Part 1
 function howManySteps(input: string) : number {
     const inputTab = input.trim().split('\n\n');
-
     const instructions = inputTab[0].split('');
-
     const network = new Map<string, Move>();
     inputTab[1].split('\n').map((instruction) => network.set(instruction.substring(0, 3), {name: instruction.substring(0, 3), left: instruction.substring(7, 10), right: instruction.substring(12, 15)}));
 
@@ -58,11 +55,8 @@ function howManySteps(input: string) : number {
 // Part 2
 function howManyStepsMultiple(input: string) : number {
     const inputTab = input.trim().split('\n\n');
-
     const instructions = inputTab[0].split('');
-
     const network = new Map<string, Move>();
-
     const currentPositions : Move[] = [];
 
     inputTab[1].split('\n').map((instruction) => {
@@ -91,8 +85,6 @@ function howManyStepsMultiple(input: string) : number {
 
         moveCounters.push(cptMoves)
     }
-
-    console.log(moveCounters)
 
     return moveCounters.reduce((x, y) => findLCM(x, y))
 }
